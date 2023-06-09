@@ -68,27 +68,6 @@ variable "env_name" {
   default             = "dev"
 }
 
-# variable "volumes" {
-#   type = map(object({
-#     size              = string
-#     availability_zone = string
-#   }))
-#   default = {
-#     "testing-dev" = {
-#       size              = "10"
-#       availability_zone = "us-east-1a"
-#     },
-#     "Worker1" = {
-#       size              = "200"
-#       availability_zone = "us-east-1b"
-#     },
-#     "Worker2" = {
-#       size              = "200"
-#       availability_zone = "us-east-1c"
-#     }
-#   }
-# }
-
 variable "volumes" {
   type = map(object({
     size              = string
