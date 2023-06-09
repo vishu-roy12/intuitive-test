@@ -39,9 +39,9 @@ resource "aws_ebs_volume" "partition" {
 
 resource "aws_volume_attachment" "ebs_att" {
   for_each    = aws_ebs_volume.partition
-  device_name = contains(["Primary", "Worker1", "Worker2"], each.key) ? "/dev/sdf" : "/dev/sdg"
+  device_name = contains(["testing-dev", "testing-stage"], each.key) ? "/dev/sdf" : "/dev/sdg"
   volume_id   = each.value.id
-  instance_id = module.ec2_instances[each.value.availability_zone].id
+  instance_id = module.ec2_instances[each.key].id
 }
 
 module "s3_bucket" {
