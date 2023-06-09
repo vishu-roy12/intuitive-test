@@ -76,15 +76,15 @@ variable "volumes" {
   default = {
     "Primary" = {
       size              = "10"
-      availability_zone = "us-east-2a"
-    }
+      availability_zone = "us-east-1a"
+    },
     "Worker1" = {
       size              = "200"
-      availability_zone = "us-east-2b"
-    }
+      availability_zone = "us-east-1b"
+    },
     "Worker2" = {
       size              = "200"
-      availability_zone = "us-east-2c"
+      availability_zone = "us-east-1c"
     }
   }
 }
